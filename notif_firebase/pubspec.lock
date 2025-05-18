@@ -21,10 +21,10 @@ packages:
     dependency: "direct main"
     description:
       name: awesome_notifications
-      sha256: "0d5fa4457f2ba4e536adc3ef6af709cdcecf4a05a1f3035981e9afa2f899b2a8"
+      sha256: "2b430c75cc879d6cfd52bb6eb2b5c1591ed425347816408cdcbd3f6916bba14c"
       url: "https://pub.dev"
     source: hosted
-    version: "0.10.1"
+    version: "0.7.4+1"
   boolean_selector:
     dependency: transitive
     description:
@@ -180,10 +180,10 @@ packages:
     dependency: transitive
     description:
       name: intl
-      sha256: "3df61194eb431efc39c4ceba583b95633a403f46c9fd341e550ce0bfa50e9aa5"
+      sha256: "910f85bce16fb5c6f614e117efa303e85a1731bb0081edf3604a2ae6e9a3cc91"
       url: "https://pub.dev"
     source: hosted
-    version: "0.20.2"
+    version: "0.17.0"
   leak_tracker:
     dependency: transitive
     description:

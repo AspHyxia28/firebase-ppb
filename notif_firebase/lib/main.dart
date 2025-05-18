@@ -5,10 +5,12 @@ import 'package:notif_firebase/pages/home_page.dart';
 import 'package:notif_firebase/pages/home.dart';
 import 'package:notif_firebase/pages/login.dart';
 import 'package:notif_firebase/pages/register.dart';
+import 'package:notif_firebase/services/notification_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await NotificationService.initializeNotification();
   runApp(const MyApp());
 }
 
