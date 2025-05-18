@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "352001320076",
+    "project_id": "notif-firebase-36112",
+    "storage_bucket": "notif-firebase-36112.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352001320076:android:fb48b6d17f55075735c7a9",
+        "android_client_info": {
+          "package_name": "com.example.notif_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBs-Yb-6kNZN9G1yKzm99SRy2OjuC9GqsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
