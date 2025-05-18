@@ -4,3 +4,4 @@ Flutter Project using Firebase
     https://www.youtube.com/watch?v=iQOvD0y-xnw
 
 *CRUD working successfully
+*Auth working, trying to tidying up
