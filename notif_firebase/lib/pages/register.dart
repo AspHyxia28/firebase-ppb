@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:notif_firebase/services/notification_service.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -26,6 +27,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   void register() async {
+    if (_emailController.text.isEmpty || _passwordController.text.isEmpty) {
+      await NotificationService.createNotification(
+        id: DateTime.now().millisecondsSinceEpoch.remainder(100000),
+        title: 'Registration Failed',
+        body: 'Email and password cannot be empty.',
+      );
+      return;
+    }
+
     setState(() {
       _isLoading = true;
       _errorCode = "";

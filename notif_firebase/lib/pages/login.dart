@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:notif_firebase/services/notification_service.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -41,6 +42,12 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() {
         _errorCode = e.code;
       });
+      // Show error notification
+      await NotificationService.createNotification(
+        id: DateTime.now().millisecondsSinceEpoch.remainder(100000),
+        title: 'Login Failed',
+        body: 'Login error: ${e.code}',
+      );
     }
 
     setState(() {

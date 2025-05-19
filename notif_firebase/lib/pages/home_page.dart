@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:notif_firebase/pages/home.dart';
 import 'package:notif_firebase/services/firestore.dart';
+import 'package:notif_firebase/services/notification_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,9 +24,17 @@ class _HomePageState extends State<HomePage> {
             content: TextField(controller: textController),
             actions: [
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   if (docID == null) {
                     firestoreService.addNote(textController.text);
+                    // Show notification for new note
+                    await NotificationService.createNotification(
+                      id: DateTime.now().millisecondsSinceEpoch.remainder(
+                        100000,
+                      ),
+                      title: 'Note Added',
+                      body: 'Your note has been added!',
+                    );
                   } else {
                     firestoreService.updateNote(docID, textController.text);
                   }
@@ -82,11 +91,29 @@ class _HomePageState extends State<HomePage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       IconButton(
-                        onPressed: () => openNoteBox(docID: docID),
+                        onPressed: () async {
+                          openNoteBox(docID: docID);
+                          await NotificationService.createNotification(
+                            id: DateTime.now().millisecondsSinceEpoch.remainder(
+                              100000,
+                            ),
+                            title: 'Edit Note',
+                            body: 'You are editing a note.',
+                          );
+                        },
                         icon: const Icon(Icons.edit),
                       ),
                       IconButton(
-                        onPressed: () => firestoreService.deleteNote(docID),
+                        onPressed: () async {
+                          firestoreService.deleteNote(docID);
+                          await NotificationService.createNotification(
+                            id: DateTime.now().millisecondsSinceEpoch.remainder(
+                              100000,
+                            ),
+                            title: 'Note Deleted',
+                            body: 'A note has been deleted.',
+                          );
+                        },
                         icon: const Icon(Icons.delete),
                       ),
                     ],
