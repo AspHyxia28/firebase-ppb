@@ -12,8 +12,8 @@ Authentication Page
 
     https://github.com/agusbudi/mobile-programming/tree/main/09.%20Firebase%20Auth
 
-*Auth working, trying to tidying up
+*Auth working
 
 **Login/Register page working, Logout working
 
-***Notification not yet implemented properly
+***Implementing Notification
