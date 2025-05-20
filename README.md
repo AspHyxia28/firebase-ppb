@@ -6,6 +6,9 @@
 
 *CRUD working 
 
+![image](https://github.com/user-attachments/assets/85f42dd8-69fc-4913-80a8-3f30270cb9c5)
+
+
 ![image](https://github.com/user-attachments/assets/5c660f20-43f4-4649-91ed-5e64b16a0d29)
 
 
